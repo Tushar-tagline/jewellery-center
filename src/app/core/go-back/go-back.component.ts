@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jewellery-center-go-back',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoBackComponent implements OnInit {
 
+  @Input() goBack?= 'Back to Page';
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
