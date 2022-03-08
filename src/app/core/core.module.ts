@@ -25,7 +25,7 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
     HeaderComponent,
     FooterComponent,
     GoBackComponent,
-   
+    AdminHeaderComponent
   ]
 })
 export class CoreModule { }
