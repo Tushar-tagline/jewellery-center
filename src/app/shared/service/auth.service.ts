@@ -9,7 +9,7 @@ export class AuthService {
 
   public login(email: string, password: string): void {
     console.log('password :>> ', password);
-  console.log('email :>> ', email);
+    console.log('email :>> ', email);
     this.angularFireAuth.signInWithEmailAndPassword(email, password).then((value: any) => {
       console.log('value :>> ', value);
       console.log('Nice, it worked!');

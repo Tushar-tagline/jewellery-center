@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from 'src/environments/environment';
-import { AdminDashboardComponent } from './features/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './features/admin/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
