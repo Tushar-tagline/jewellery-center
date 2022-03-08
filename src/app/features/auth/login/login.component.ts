@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from 'src/app/shared/service/userservice.service';
 
 @Component({
   selector: 'jewellery-center-login',
@@ -9,7 +8,7 @@ import { UserserviceService } from 'src/app/shared/service/userservice.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient,private userService:UserserviceService) { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
 

@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label>Create New Account?</label>
-                        <a href="" class="ms-2 text-decoration-none " routerLink="/user/signup"
+                        <a href="" class="ms-2 text-decoration-none " routerLink="/auth/signup"
                             routerLinkActive="activelink">Signup</a>
                     </div>
                     <form #mysignin="ngForm" (ngSubmit)="loginSubmit(mysignin)">
@@ -32,7 +32,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary" [disabled]="!mysignin.valid">Login</button>
                         <!-- <a href="" class="ms-2 text-decoration-none"
-                            [routerLink]="['/user/forgetpassword']">Forgetpassword</a> -->
+                            [routerLink]="['/auth/forgetpassword']">Forgetpassword</a> -->
                     </form>
                 </div>
             </div>

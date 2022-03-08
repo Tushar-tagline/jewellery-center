@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'user', loadChildren: () => import('./ features/auth/auth.module').then(m => m.UserModule)
+    path: 'auth', loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'customer', loadChildren: () => import('./ features/customer/customer.module').then(m => m.CustomerModule)
+    path: 'customer', loadChildren: () => import('./features/customer/customer.module').then(m => m.CustomerModule)
   },
   {
     path: '**',
-    redirectTo: '/customer/home'
+    redirectTo: 'customer'
   }
 ];
 
