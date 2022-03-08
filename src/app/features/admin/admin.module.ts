@@ -17,7 +17,7 @@ import { ViewproductComponent } from './viewproduct/viewproduct.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-
+    CoreModule
   ]
 })
 export class AdminModule { }
