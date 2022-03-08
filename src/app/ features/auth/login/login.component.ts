@@ -14,10 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  public loginSubmit(event:any){
-   this.userService.signIn(event.value).subscribe((res)=>{
-    console.log(res)
-   })
-    
+  loginSubmit(data:any){
+
   }
 }

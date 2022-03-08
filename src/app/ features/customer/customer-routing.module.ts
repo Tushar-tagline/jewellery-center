@@ -9,14 +9,13 @@ const routes: Routes = [
     component: DashbordComponent
   },
   {
-    path:'ring',
-    component:RingsComponent
+    path: 'ring',
+    component: RingsComponent
   },
   {
     path: '**',
     redirectTo: 'customer'
   }
-
 ];
 
 @NgModule({
