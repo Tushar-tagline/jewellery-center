@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/service/auth.service';
 
 @Component({
   selector: 'jewellery-center-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jewellery-center';
+  constructor(){}
+
 }

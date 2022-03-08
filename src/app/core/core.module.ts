@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GoBackComponent } from './go-back/go-back.component';
 import { RouterModule } from '@angular/router';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+
 
 
 
@@ -11,7 +13,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    GoBackComponent
+    GoBackComponent,
+    AdminHeaderComponent
+    
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,8 @@ import { RouterModule } from '@angular/router';
   exports:[
     HeaderComponent,
     FooterComponent,
-    GoBackComponent
+    GoBackComponent,
+   
   ]
 })
 export class CoreModule { }

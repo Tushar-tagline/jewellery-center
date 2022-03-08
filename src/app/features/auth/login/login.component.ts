@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/service/auth.service';
 
 @Component({
   selector: 'jewellery-center-login',
@@ -8,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-
+    
   }
-  loginSubmit(data:any){
-
+  public login(){
+    this.authService.login('customer.tushar@gmail.com', '123456');
   }
 }

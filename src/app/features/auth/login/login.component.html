@@ -11,7 +11,7 @@
                         <a href="" class="ms-2 text-decoration-none " routerLink="/auth/signup"
                             routerLinkActive="activelink">Signup</a>
                     </div>
-                    <form #mysignin="ngForm" (ngSubmit)="loginSubmit(mysignin)">
+                    <form #mysignin="ngForm" (ngSubmit)="login()">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="text" class="form-control" id="email" name="email" required
