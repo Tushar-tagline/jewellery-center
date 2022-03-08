@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'user'
+    redirectTo: '/customer/home'
   }
 ];
 
