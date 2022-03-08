@@ -9,6 +9,9 @@ const routes: Routes = [
     path: 'customer', loadChildren: () => import('./features/customer/customer.module').then(m => m.CustomerModule)
   },
   {
+    path: 'admin', loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: '**',
     redirectTo: 'customer'
   }
