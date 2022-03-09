@@ -8,12 +8,15 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 })
 export class ProductService {
   public basePath = this.db.database.ref('/products');
-  constructor(private db: AngularFireDatabase) { 
-    
-}
+  constructor(private db: AngularFireDatabase) {
 
-  public addProductdetail(productDetails:any): void {
-    this.basePath.push(productDetails)
+  }
+
+  public addProductdetail(productDetails: any): any {
+    return new Promise((resolve, reject)=>{
+      this.basePath.push(productDetails);
+      resolve(true);
+    });
   }
 
   public getProduct(): any {
@@ -23,7 +26,7 @@ export class ProductService {
           return {
             ...data.val()[key],
             cartId: key,
-            
+
           };
         });
         resolve(allProduct);
@@ -31,8 +34,16 @@ export class ProductService {
     });
   }
 
-  public remove(id: string):any {
-      const basePath = this.db.database.ref('/products/' + id);
-      basePath.remove();
-    }
+  public remove(id: string): any {
+    const basePath = this.db.database.ref('/products/' + id);
+    basePath.remove();
+  }
+
+  public productUpdate(id: string, data:any): any {
+    return new Promise((resolve, reject)=>{
+      const basepath = this.db.database.ref('/products/' + id)
+      basepath.update(data)
+      resolve(true);
+    });
+  }
 }
