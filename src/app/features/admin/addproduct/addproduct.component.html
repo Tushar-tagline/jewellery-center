@@ -1,1 +1,45 @@
-<p>addproduct works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="card">
+            <div class="card-header text-center">
+                <jewellery-center-go-back></jewellery-center-go-back>
+                <h3 class="card-title text-primary">Add Item</h3>
+            </div>
+
+            <div class="card-body">
+                <form [formGroup]="addProduct" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Product Name </label>
+                        <input type="text" class="form-control" id="ProductName" formControlName="ProductName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Enter Price</label>
+                        <input type="text" class="form-control" id="price"  formControlName="productPrice">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label">Enter Return Time</label>
+                        <input type="text" class="form-control" id="returnTime"  formControlName="returnTime">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label">Product Detail</label>
+                        <input type="text" class="form-control" id="productDetail"  formControlName="productDetail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label">Enter your firebase path</label>
+                        <input type="text" class="form-control" id="Input2"  formControlName="imagePath">
+                    </div>
+                    <div class="mb-3">
+                        <label class="me-1">SelectCategory</label>
+                        <select name="selectCategory" formControlName="selectCategory">
+                            <option>Chooes</option>
+                            <option *ngFor="let item of selectcategory" id={{item.id}}>{{item.value}}</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">add item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

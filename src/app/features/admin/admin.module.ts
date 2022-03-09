@@ -7,6 +7,7 @@ import { CoreModule } from 'src/app/core/core.module';
 import { AdminHeaderComponent } from 'src/app/core/admin-header/admin-header.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { ViewproductComponent } from './viewproduct/viewproduct.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
