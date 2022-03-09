@@ -14,17 +14,14 @@
     </thead>
     <tbody>
         <tr *ngFor="let item of product;let i = index;">
-
-            <td>{{i+1}}</td>
+             <td>{{i+1}}</td>
             <td>{{item.ProductName}}</td>
             <td>{{item.cartId}}</td>
             <td>{{item.productPrice}}</td>
             <td>{{item.returnTime}}</td>
             <td>{{item.productDetail}}</td>
-            <td>{{item.imagePath}}</td>
-            <td><button class="btn btn-danger">delete</button></td>
-
-        </tr>
-
+            <td><img src={{item.imagePath}}> </td>
+            <td><button class="btn btn-danger" (click)="deleteproduct(item.cartId)">delete</button></td>
+         </tr>
     </tbody>
 </table>

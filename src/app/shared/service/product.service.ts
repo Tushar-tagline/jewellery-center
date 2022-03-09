@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   public basePath = this.db.database.ref('/products');
   constructor(private db: AngularFireDatabase) { 
+    
 }
 
   public addProductdetail(productDetails:any): void {
@@ -28,8 +31,8 @@ export class ProductService {
     });
   }
 
-  public remove(id: string = '-MxhGDWoxe8Fzhdn6638') {
-    const basePath = this.db.database.ref('/products' + id);
-    
-  }
+  public remove(id: string):any {
+      const basePath = this.db.database.ref('/products/' + id);
+      basePath.remove();
+    }
 }

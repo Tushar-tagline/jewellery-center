@@ -10,11 +10,15 @@ export class ViewproductComponent implements OnInit {
   public product: any[] = [];
   constructor(private productService: ProductService) { }
 
-
   ngOnInit(): void {
     this.productService.getProduct().then((res: any) => {
       console.log('res :>> ', res)
       this.product = res
     })
-   }
+  }
+
+  public deleteproduct(id: string) {
+    console.log('id :>> ', id);
+    this.productService.remove(id);
+  }
 }
