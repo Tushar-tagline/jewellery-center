@@ -8,12 +8,14 @@ import { AdminHeaderComponent } from 'src/app/core/admin-header/admin-header.com
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 @NgModule({
   declarations: [
     AddproductComponent,
-    ViewproductComponent
+    ViewproductComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,

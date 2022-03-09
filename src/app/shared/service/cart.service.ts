@@ -24,7 +24,6 @@ export class CartService {
   }
 
   public getcart(): void {
-    const cartArrayCheck = [];
     this.basePath.on('value', (data: any) => {
       const allCarts = Object.keys(data.val()).map((key) => {
         return {

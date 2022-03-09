@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/shared/service/product.service';
   styleUrls: ['./addproduct.component.scss']
 })
 export class AddproductComponent implements OnInit {
-  public addProduct!: FormGroup
+  public addProduct!: FormGroup;
   public selectcategory: Array<any> = [{
     id: '1',
     value: 'Rings'
@@ -26,7 +27,7 @@ export class AddproductComponent implements OnInit {
     value: 'GiftCard'
   },
   ]
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.addProduct = new FormGroup({
@@ -40,17 +41,12 @@ export class AddproductComponent implements OnInit {
       productDetail: new FormControl(null, Validators.required),
       imagePath: new FormControl(null, Validators.required),
       selectCategory: new FormControl(null, Validators.required)
-      // productDetail: new FormControl(null, Validators.required
     });
   }
-  /**
-   * onSubmit
-   */
-  public onSubmit() {
-    console.log('this.addProduct.value :>> ', this.addProduct.value);
-    this.productService.addProductdetail(this.addProduct.value)
+
+  public onSubmit(): void {
+    this.productService.addProductdetail(this.addProduct.value).then((res: any) => {
+      this.router.navigate(['/admin/viewproduct']);
+    })
   }
-
-
-
 }
