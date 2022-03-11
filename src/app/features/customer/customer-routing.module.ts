@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashbordComponent } from './dashbord/dashbord.component';
+import { HomeComponent } from './home/home.component';
+import { ShowProductComponent } from './show-product/show-product.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: DashbordComponent
+    component: DashbordComponent,
+    children:[
+      {
+        path:'home',
+        component:HomeComponent
+      },
+      {
+        path:'show-product',
+        component: ShowProductComponent
+      },
+      {
+        path:'**',
+        redirectTo:'home'
+      },
+    ]
   },
   {
     // path: 'ring',
@@ -14,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: ''
   }
 ];
 

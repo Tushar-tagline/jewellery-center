@@ -4,13 +4,18 @@ import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { CoreModule } from 'src/app/core/core.module';
-import { ShowproductComponent } from './showproduct/showproduct.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     DashbordComponent,
-    ShowproductComponent,
+    ShowProductComponent,
+    SubHeaderComponent,
+    ShowProductComponent,
+    HomeComponent,
   
   ],
   imports: [
