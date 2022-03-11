@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active  " aria-current="page"
+                        (click)="setSelectedCategory('home', '/customer/home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  ms-2" (click)="setSelectedCategory('ring', '/customer/show-product')">Rings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-2"
+                        (click)="setSelectedCategory('necklace', '/customer/show-product')">Necklace</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-2"
+                        (click)="setSelectedCategory('earring', '/customer/show-product')">Earring</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
