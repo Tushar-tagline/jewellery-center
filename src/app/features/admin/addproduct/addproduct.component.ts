@@ -11,19 +11,19 @@ import { ProductService } from 'src/app/shared/service/product.service';
 export class AddproductComponent implements OnInit {
   public addProduct!: FormGroup;
   public selectcategory: Array<any> = [{
-    id: '1',
+    id: 'rings',
     value: 'Rings'
   },
   {
-    id: '2',
+    id: 'nacklaces',
     value: 'Nacklaces'
   },
   {
-    id: '3',
+    id: 'earrings',
     value: 'Earrings'
   },
   {
-    id: '4',
+    id: 'giftCard',
     value: 'GiftCard'
   },
   ]
