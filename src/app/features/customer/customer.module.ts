@@ -7,6 +7,7 @@ import { CoreModule } from 'src/app/core/core.module';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { ShowProductComponent } from './show-product/show-product.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HomeComponent } from './home/home.component';
     SubHeaderComponent,
     ShowProductComponent,
     HomeComponent,
+    ProductDetailComponent,
   
   ],
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/shared/service/customer.service';
-import { ProductService } from 'src/app/shared/service/product.service';
 import { ShowProductService } from 'src/app/shared/service/show-product.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ShowProductComponent implements OnInit {
   public allProduct: any[] = [];
   public filterProduct: any[] = [];
 
-  constructor(private customerService: CustomerService, private showProductService: ShowProductService) { }
+  constructor(private customerService: CustomerService, private showProductService: ShowProductService, private route: Router) { }
 
   ngOnInit(): void {
     this.getProduct();
@@ -34,4 +34,7 @@ export class ShowProductComponent implements OnInit {
     })
   }
 
+  public viewDetail(id: string): void {
+    this.route.navigate(['./customer/product-detail', id])
+  }
 }

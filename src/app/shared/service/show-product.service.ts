@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShowProductService {
   public basePath = this.db.database.ref('/products');
+  
+
   constructor(private db: AngularFireDatabase) { }
 
   public getShowProduct(): any {
@@ -21,6 +25,5 @@ export class ShowProductService {
         resolve(allProduct);
       });
     });
-    
   }
 }

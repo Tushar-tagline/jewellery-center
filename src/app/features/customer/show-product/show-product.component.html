@@ -5,13 +5,14 @@
                 <div class="card">
                     <img src={{product.imagePath}} class="card-img-top" height="250px" width="250px">
                     <div class="card-body">
+                         <p><span class="text-primary">ID</span> :{{product.cartId}}</p>
                         <p><span class="text-primary">Name</span> :{{product.ProductName}}</p>
                         <p><span class="text-primary">Price</span>:{{product.productPrice}}</p>
                         <p><span class="text-primary">Detail</span>:{{product.productDetail}}</p>
                         <p><span class="text-primary">category</span>:{{product.categoryType}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
+                        <a  class="btn btn-primary" (click)="viewDetail(product.cartId)">View</a>
                     </div>
                 </div>
             </div>

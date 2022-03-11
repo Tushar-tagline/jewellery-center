@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let detail of productDetail">
+            <div class="col-md-6 my-2">
+                <div class="card">
+                    <img src={{detail.imagePath}} class="card-img-top" height="250px" width="250px">
+                    <div class="card-body">
+                        <p><span class="text-primary">ID</span> :{{detail.cartId}}</p>
+                        <p><span class="text-primary">Name</span> :{{detail.ProductName}}</p>
+                        <p><span class="text-primary">Price</span>:{{detail.productPrice}}</p>
+                        <p><span class="text-primary">Detail</span>:{{detail.productDetail}}</p>
+                        <p><span class="text-primary">category</span>:{{detail.categoryType}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
