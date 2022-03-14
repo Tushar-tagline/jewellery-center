@@ -42,6 +42,4 @@ export class CartService {
     const basePath = this.db.database.ref('/carts/' + id);
     basePath.remove();
   }
-
-
 }

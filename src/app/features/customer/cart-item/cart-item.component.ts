@@ -9,6 +9,7 @@ import { CartService } from 'src/app/shared/service/cart.service';
 export class CartItemComponent implements OnInit {
   public allCartItems: any[] = [];
   public getUser: any;
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class CartItemComponent implements OnInit {
 
   public getAllCarts() {
     this.cartService.getAllCarts().then((res: any) => {
-      this.allCartItems = res
+     this.allCartItems = res
       this.allCartItems.map((res) => {
         Object.assign(res)
       })
@@ -56,7 +57,7 @@ export class CartItemComponent implements OnInit {
       }
     })
   }
-  
+
   public deleteProduct(id: string): void {
     this.cartService.remove(id);
     this.getAllCarts();

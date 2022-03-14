@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CartService } from 'src/app/shared/service/cart.service';
 import { CustomerService } from 'src/app/shared/service/customer.service';
 
 @Component({
@@ -8,10 +10,13 @@ import { CustomerService } from 'src/app/shared/service/customer.service';
   styleUrls: ['./sub-header.component.scss']
 })
 export class SubHeaderComponent implements OnInit {
-
-  constructor(private router: Router, private customerService: CustomerService) { }
+  
+  constructor(private router: Router, private customerService: CustomerService) {
+   
+   }
 
   ngOnInit(): void {
+
   }
 
   setSelectedCategory(category: any, redirectUrl: any) {
