@@ -11,26 +11,24 @@
                         <a href="" class="ms-2 text-decoration-none " routerLink="/auth/signup"
                             routerLinkActive="activelink">Signup</a>
                     </div>
-                    <form #mysignin="ngForm" (ngSubmit)="login()">
+                    <form [formGroup]="signin" (ngSubmit)="login()">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="text" class="form-control" id="email" name="email" required
-                                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" #email="ngModel" ngModel />
-                            <div *ngIf="!email.valid && email.touched">
+                            <input type="text" class="form-control" id="email" name="email" formControlName="email" />
+                            <!-- <div *ngIf="!email.valid && email.touched">
                                 <small class="text-danger">Enter valid email</small>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
 
-                            <input type="password" class="form-control" id="password" name="password" required
-                                minlength="6" #password="ngModel" ngModel />
+                            <input type="password" class="form-control" id="password" name="password" formControlName="password" />
 
-                            <div *ngIf="!password.valid && password.touched">
+                            <!-- <div *ngIf="!password.valid && password.touched">
                                 <small class="text-danger">Enter valid password</small>
-                            </div>
+                            </div> -->
                         </div>
-                        <button type="submit" class="btn btn-primary" [disabled]="!mysignin.valid">Login</button>
+                        <button type="submit" class="btn btn-primary" >Login</button>
                         <!-- <a href="" class="ms-2 text-decoration-none"
                             [routerLink]="['/auth/forgetpassword']">Forgetpassword</a> -->
                     </form>

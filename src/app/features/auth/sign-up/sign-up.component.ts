@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,7 +18,7 @@ export class SignUpComponent implements OnInit {
     value: 'customer'
   }
   ]
-  constructor() { }
+  constructor( private angularFireAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
     this.signup = new FormGroup({
@@ -27,16 +28,37 @@ export class SignUpComponent implements OnInit {
         Validators.email,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
       ]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-z]).{6,32}$'),
-      ]),
+      password: new FormControl(null, Validators.required),
       role: new FormControl(null, Validators.required)
     });
   }
   public onSubmit() {
+    console.log(this.signup);
+    
+    return this.angularFireAuth
+      .createUserWithEmailAndPassword(this.signup.value.email, this.signup.value.password)
+      .then((result) => {
+        console.log(result,"result")
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
 
+  SetUserData(user: any) {
+    // const userRef: AngularFirestoreDocument<any> = this.angularFirestore.doc(
+    //   `users/${user.userid}`
+    // );
+    // const userData = {
+    //   userid: user.userid,
+    //   email: user.email,
+    //   name: user.name,
+    //   role: user.role
+    // };
+    // return userRef.set(userData, {
+    //   merge: true,
+    // });
   }
 
 }
