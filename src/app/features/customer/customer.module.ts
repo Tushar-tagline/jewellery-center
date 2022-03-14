@@ -8,6 +8,7 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { ShowProductComponent } from './show-product/show-product.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ShowProductComponent,
     HomeComponent,
     ProductDetailComponent,
+    CartItemComponent,
   
   ],
   imports: [
