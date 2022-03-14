@@ -38,6 +38,10 @@ export class CartService {
       resolve(true);
     });
   }
+  public remove(id: string): any {
+    const basePath = this.db.database.ref('/carts/' + id);
+    basePath.remove();
+  }
 
 
 }
