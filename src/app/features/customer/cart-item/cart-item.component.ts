@@ -21,7 +21,7 @@ export class CartItemComponent implements OnInit {
 
   public getAllCarts() {
     this.cartService.getAllCarts().then((res: any) => {
-     this.allCartItems = res
+      this.allCartItems = res
       this.allCartItems.map((res) => {
         Object.assign(res)
       })

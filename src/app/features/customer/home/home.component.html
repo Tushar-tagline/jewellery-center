@@ -27,91 +27,22 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-12 d-flex justify-content-evenly ">
-            <div class="col-md-3 mt-3 me-5">
+        <ng-container *ngFor="let product of allProduct">
+            <div class="col-md-4 my-2">
                 <div class="card">
-                    <img src="assets/ima1.jpeg" class="card-img-top" alt="...">
+                    <img src={{product.imagePath}} class="card-img-top" height="250px" width="250px">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                         <p><span class="text-primary">ID</span> :{{product.cartId}}</p>
+                        <p><span class="text-primary">Name</span> :{{product.ProductName}}</p>
+                        <p><span class="text-primary">Price</span>:{{product.productPrice}}</p>
+                        <p><span class="text-primary">Detail</span>:{{product.productDetail}}</p>
+                        <p><span class="text-primary">category</span>:{{product.categoryType}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
+                        <a  class="btn btn-primary" (click)="viewDetail(product.cartId)">View</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-3 me-5">
-                <div class="card">
-                    <img src="assets/ima3.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mt-3 me-5">
-                <div class="card">
-                    <img src="assets/ima2.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 d-flex justify-content-evenly ">
-            <div class="col-md-3 mt-3  me-5">
-                <div class="card">
-                    <img src="assets/ima1.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mt-3 me-5">
-                <div class="card">
-                    <img src="assets/ima3.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mt-3 me-5">
-                <div class="card">
-                    <img src="assets/ima2.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">View</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </ng-container>
     </div>
 </div>
